@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About 姜天佐 Tianzuo Jiang</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff0000, #ff4d4d, #ff9999); /* 红色渐变 */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1000px;
+      z-index: 1;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .card p {
+      margin-bottom: 10px;
+    }
+    .image-container {
+      text-align: center;
+      margin: 20px 0;
+      z-index: 1;
+    }
+    .image-container img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3; /* 调整透明度 */
+      z-index: 0;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4d4d;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #e60000;
+    }
+    .hidden-message {
+      display: none;
+      text-align: center;
+      font-size: 3rem; /* 放大字体 */
+      font-weight: bold;
+      color: white;
+      position: absolute;
+      top: 33%; /* 居中占屏幕1/3 */
+      left: 0;
+      right: 0;
+      animation: fadeIn 0.5s ease-in-out;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Image -->
+  <img src="5-©-Haiwei-Hu-Getty-1 1.png" alt="Background of Forbidden City" class="background-image" />
+  
+  <h1>About Jiang Tianzuo</h1>
+  <div class="image-container">
+    <img src="IMG_5197 1.png" alt="Jiang Tianzuo" />
+  </div>
+  <div class="dashboard">
+    <!-- Personal Information Card -->
+    <div class="card">
+      <h2>Personal Information</h2>
+      <p><strong>Name:</strong> Jiang Tianzuo</p>
+      <p><strong>Education:</strong> Interactive Design from George Washington University</p>
+    </div>
+    <!-- Interests Card -->
+    <div class="card">
+      <h2>Interests</h2>
+      <p><strong>Instrument:</strong> Guqin & Ocarinas</p>
+      <p><strong>Chess:</strong> Game of Go & Chinese Chess</p>
+      <p><strong>Sports:</strong> Sailing & Yachting</p>
+      <p><strong>Others:</strong> Peking Opera & Chinese Caligraphy</p>
+      <button class="button" onclick="toggleMessage()">Learn More</button>
+      <div id="interestMessage" class="hidden-message" onclick="toggleMessage()">I love my professor and classmates!</div>
+    </div>
+    <!-- Future Goals Card -->
+    <div class="card">
+      <h2>Future Goals</h2>
+      <p>1. Good GPA</p>
+      <p>2. Perfect Life</p>
+      <p>3. Longevity</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMessage() {
+      const message = document.getElementById('interestMessage');
+      message.style.display = message.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
