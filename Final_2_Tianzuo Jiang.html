@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Poetry</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(180deg, #1e3c72, #2a5298);
+            overflow: hidden;
+        }
+
+        #page1, #page2 {
+            display: none;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #page1.active, #page2.active {
+            display: block;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        strong {
+            background: linear-gradient(180deg, #FF83B0 0%, #8D0034 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Times New Romance";
+            font-size: 128px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            animation: glow 2s infinite alternate;
+        }
+
+        div {
+            color: #ffffff;
+            font-family: "Times New Romance";
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        span.word1 {
+            color: rgb(255, 177, 190);
+        }
+
+        span.word2 {
+            color: rgb(137, 220, 255);
+        }
+
+        button {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #FF83B0, #8D0034);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-family: "Arial", sans-serif;
+            border-radius: 20px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        button:hover {
+            transform: scale(1.1) translateX(-50%);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #FF83B0, 0 0 10px #FF83B0, 0 0 20px #FF83B0;
+            }
+            to {
+                text-shadow: 0 0 15px #8D0034, 0 0 30px #8D0034, 0 0 45px #8D0034;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px rgba(255, 131, 176, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(255, 131, 176, 1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="active">
+        <div>
+            <h1>
+                <span class="word1">Shall I compare </span><strong> thee </strong><span class="word2"> to a summer's day?</span>
+            </h1>
+        </div>
+        <button onclick="switchPage()">Next Page</button>
+    </div>
+
+    <div id="page2">
+        <div>
+            <h1>
+                <span class="word2">Thou art </span><strong> more lovely </strong><span class="word1"> and more temperate.</span>
+            </h1>
+        </div>
+        <button onclick="switchPage()">Go Back</button>
+    </div>
+
+    <script>
+        function switchPage() {
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            page1.classList.toggle('active');
+            page2.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
